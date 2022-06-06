@@ -6,7 +6,9 @@ public class User extends Thread {
     @Override
     public void run() {
         while (true) {
-            if(!Main.getToyOn()) {
+            if (Main.isGameOff()) {
+                break;
+            } else if (!Main.isToyOn()) {
                 Main.setToyOn(true);
                 System.out.println("Пользователь включил тумблер");
                 try {
